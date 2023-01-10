@@ -14,6 +14,11 @@
 #include <arpa/inet.h>
 
 /**
+ * 打印服务器特有输出标题
+ */
+void server_say_tilte();
+
+/**
  * 打印错误信息并退出
  * @param msg 错误信息
  */

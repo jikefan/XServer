@@ -1,20 +1,25 @@
 //
 // Created by jikefan on 2023/1/9.
 //
-#include <stdio.h>
-#include "wrap.h"
-#include "../type/x_string.h"
+#include "server.h"
 
+#define VERSION "0.0.1"
 
-int main() {
-    string s1 = new_string("hello");
-    string s2 = new_string(" world!");
-    string s3 = string_append(s1, s2);
+#define TEST_STATUS 0
 
-    printf("%s\n", s1->ch_ptr);
-    printf("%s\n", s2->ch_ptr);
-    printf("%s\n", s3->ch_ptr);
-    printf("success\n");
+int main(int argc, char *argv[]) {
+    if (TEST_STATUS) {
+
+    } else {
+        if (argc != 2) {
+            server_say_tilte();
+            printf("\t服务器启动必须提供监听端口号\n");
+            exit(1);
+        }
+        int port = atoi(argv[1]);
+        printf("[ XServer " VERSION "] started\n");
+        xserver_launch(port);
+    }
 
     return 0;
 }

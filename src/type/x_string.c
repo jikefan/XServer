@@ -47,3 +47,8 @@ string string_append(string front_str, string rear_str) {
     memcpy(p, rear_str->ch_ptr, rear_str->size + 1);
     return str;
 }
+
+void string_free(string str) {
+    free(str->ch_ptr);
+    free(str);
+}

@@ -5,6 +5,9 @@
 #ifndef XSERVER_SERVER_H
 #define XSERVER_SERVER_H
 #include "wrap.h"
+#include <pthread.h>
+#include <ctype.h>
+#include "../utils/fpromgram.h"
 
 /**
  * 根据参数初始化sockaddr通用地址结构
@@ -29,5 +32,17 @@ void sockaddr_sint(struct sockaddr* addr, const int domain, const int port);
  * @param port 整型端口号
  */
 void xserver_launch(int port);
+
+/**
+ * socket连接处理函数
+ * @param argv socket文件描述符
+ */
+void* request_handler(void * argv);
+
+/**
+ * 打印连接到服务器的客户端信息
+ * @param addr
+ */
+void print_client_info(struct sockaddr_in* addr);
 
 #endif //XSERVER_SERVER_H

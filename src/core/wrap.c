@@ -4,8 +4,12 @@
 
 #include "wrap.h"
 
-static void print_code_position() {
+void server_say_tilte() {
     printf("[" SERVER_NAME "]:\n");
+}
+
+static void print_code_position() {
+    server_say_tilte();
     printf("\tFile: %s\n" "\tLine: %d\n", __FILE__, __LINE__);
     printf("\t\\__");
 }

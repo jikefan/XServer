@@ -52,4 +52,9 @@ string new_string(const char* str);
  */
 string string_append(string front_str, string rear_str);
 
+/**
+ * 释放string的空间
+ */
+void string_free(string str);
+
 #endif //XSERVER_X_STRING_H
