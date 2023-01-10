@@ -3,4 +3,4 @@ project(XServer C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(XServer main.c)
+add_executable(XServer src/core/wrap.h src/core/wrap.c src/core/xserver.c src/core/xserver.h src/core/server.c src/core/server.h src/type/x_string.c src/type/x_string.h)
